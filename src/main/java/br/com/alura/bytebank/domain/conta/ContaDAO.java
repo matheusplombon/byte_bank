@@ -22,7 +22,7 @@ public class ContaDAO {
 
     public void salvar(DadosAberturaConta dadosDaConta) {
         var cliente = new Cliente(dadosDaConta.dadosCliente());
-        var conta = new Conta(dadosDaConta.numero(), cliente);
+        var conta = new Conta(dadosDaConta.numero(), BigDecimal.ZERO, cliente);
 
         String sql = "INSERT INTO conta (numero, saldo, cliente_nome, cliente_cpf, cliente_email) VALUES (?, ?, ?, ?, ?)";
 
@@ -64,7 +64,7 @@ public class ContaDAO {
                         new DadosCadastroCliente(nome, cpf, email);
                 Cliente cliente = new Cliente(dadosCadastroCliente);
 
-                contas.add(new Conta(numero, cliente));
+                contas.add(new Conta(numero, saldo, cliente));
             }
             resultSet.close();
             ps.close();
@@ -74,10 +74,10 @@ public class ContaDAO {
         return contas;
     }
 
-    public void alterar(Integer numero, BigDecimal valor) {
-        String sql = "UPDATE conta SET saldo = saldo + ? WHERE numero = ?";
+    public void alterar(Integer numero, BigDecimal novoSaldo) {
+        String sql = "UPDATE conta SET saldo = ? WHERE numero = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setBigDecimal(1, valor);
+            ps.setBigDecimal(1, novoSaldo);
             ps.setInt(2, numero);
 
             int rowsAffected = ps.executeUpdate();
@@ -88,7 +88,6 @@ public class ContaDAO {
             throw new RuntimeException("Erro ao acessar o banco de dados", e);
         }
     }
-
     public void remover(Integer numero) {
         String sql = "DELETE FROM conta WHERE numero = ?";
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
