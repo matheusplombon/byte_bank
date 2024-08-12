@@ -18,16 +18,15 @@ public class Conta {
     }
 
     public boolean possuiSaldo() {
+
         return this.saldo.compareTo(BigDecimal.ZERO) != 0;
     }
 
     public void sacar(BigDecimal valor) {
+
         this.saldo = this.saldo.subtract(valor);
     }
 
-    public void depositar(BigDecimal valor) {
-        this.saldo = this.saldo.add(valor);
-    }
 
     @Override
     public boolean equals(Object o) {
