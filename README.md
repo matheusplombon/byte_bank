@@ -9,6 +9,15 @@ Este é um projeto de estudo desenvolvido por **Matheus Plombon** como parte do 
 - **Saques:** Realiza saques de valores, respeitando o saldo disponível.
 - **Transferências:** Transferências de valores entre contas do banco.
 - **Relatórios:** Geração de relatórios com informações sobre as contas.
+- **Encerramento de Conta:** Método booleano para ativar ou desativar (encerrar) contas.
+- **Consulta de Saldo:** Permite consultar o saldo atual de uma conta.
+- **Listagem de Contas:** Exibe uma lista de todas as contas existentes no banco.
+
+## Atualizações da Branch
+
+- Criado o método para depósitos.
+- Hikari CP: O pooling de conexões é uma técnica que reutiliza um conjunto de conexões abertas ao banco de dados, evitando o custo elevado de criar e destruir conexões frequentemente.
+- Criado método booleano para ativar/desativar conta.
 
 ## Tecnologias Utilizadas
 
