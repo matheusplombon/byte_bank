@@ -25,3 +25,6 @@ Este é um projeto de estudo desenvolvido por **Matheus Plombon** como parte do 
 ![Maven](https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apachemaven&logoColor=white)
 ![IntelliJ](https://img.shields.io/badge/IntelliJ%20IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+
+## Banco de dados
+![image](https://github.com/user-attachments/assets/e7a71d46-f41e-4884-b882-17dbf62e8ccf)
